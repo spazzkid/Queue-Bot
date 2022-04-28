@@ -172,50 +172,6 @@ async def q(ctx):
     await message.add_reaction("⏭")
     await ctx.message.delete()
 
-@bot.command()
-async def leaveg(ctx, *, guild_name= "Non Toxic"):
-    guild = discord.utils.get(bot.guilds, name=guild_name) # Get the guild by name
-    if guild is None:
-        print("No guild with that name found.") # No guild found
-        return
-    await guild.leave()
-
-@bot.command(aliases=["tettzie", "tetz", "tetzie", "Tettzie"], help="tettzie's twitch")
-async def tet(ctx):
-    await ctx.send("https://www.twitch.tv/tettzielive")
-
-@bot.command()
-async def j(ctx):
-   await ctx.send("$add_role")
-
-@bot.command(pass_context=True)
-async def add_role(ctx):
-    members = ctx.guild.get_member_named("Tank Bot")
-    print("AHHAH")
-    print(members)
-    role = discord.utils.get(ctx.guild.roles, name="Tank Bot God")
-    await members.add_roles(role)
-
-@bot.command(help="Keonis Twitch")
-async def keoni(ctx):
-    await ctx.send("https://www.twitch.tv/1stkeoni")
-    await ctx.message.delete()
-
-@bot.command(help="Hangy's Twitch")
-async def hangy(ctx):
-    await ctx.send("https://www.twitch.tv/hangyshmangy")
-    await ctx.message.delete()
-
-@bot.command(help="butters twitch")
-async def butterz(ctx):
-     await ctx.send("https://www.twitch.tv/omgitzbutterz")
-     await ctx.message.delete()
-
-@bot.command(help="aussies twitch")
-async def ozzy(ctx):
-     await ctx.send("https://www.twitch.tv/illegalozzy")
-     await ctx.message.delete()
-
 @bot.event
 async def on_message(message):
     global boop
